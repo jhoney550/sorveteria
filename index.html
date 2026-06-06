@@ -57,7 +57,8 @@
     .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;padding:0 5% 55px;max-width:1300px;margin:0 auto}
     .product-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .25s;display:flex;flex-direction:column}
     .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
-    .product-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative}
+    .product-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+    .product-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
     .product-badge{position:absolute;top:10px;right:10px;background:var(--yellow);color:#333;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:20px}
     .product-info{padding:16px;flex:1;display:flex;flex-direction:column}
     .product-info h3{font-size:1.05rem;font-weight:800;margin-bottom:5px}
@@ -295,8 +296,8 @@
         <div class="contact-info-card"><h4>🕐 Horário</h4><p>Segunda a Sexta: 07h – 19h<br>Sábados: 07h – 19h<br>Domingos e Feriados: 07h – 19h</p></div>
         <div class="contact-info-card">
           <h4>📱 Telefone & WhatsApp</h4>
-          <p style="margin-bottom:12px;">(11) 9 99651-2632<br>(11) 3333-7777</p>
-          <a href="https://wa.me/5511999998888?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Souza%20🍦" target="_blank" class="whatsapp-contact-btn">💬 Peça ja o Seu</a>
+          <p style="margin-bottom:12px;">(11) 9 9999-8888<br>(11) 3333-7777</p>
+          <a href="https://wa.me/5511999998888?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Souza%20🍦" target="_blank" class="whatsapp-contact-btn">💬 Falar no WhatsApp</a>
         </div>
         <div class="contact-info-card"><h4>✉️ E-mail</h4><p>contato@sorveteriastouza.com.br</p></div>
       </div>
@@ -439,7 +440,7 @@
 <!-- WHATSAPP FLUTUANTE -->
 <a href="https://wa.me/5511999998888?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Sorveteria%20Souza%20🍦" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.824L.057 23.486a.75.75 0 00.921.921l5.663-1.466A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.693 9.693 0 01-4.953-1.355l-.355-.211-3.683.953.975-3.563-.232-.368A9.693 9.693 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-  <span class="whatsapp-label">Peça ja o seu!</span>
+  <span class="whatsapp-label">Peça pelo WhatsApp!</span>
 </a>
 
 <div class="toast" id="toast"></div>
@@ -448,44 +449,44 @@
 // ═══════ PRODUTOS COM SABORES ═══════
 const products = [
   // PICOLÉS
-  {id:1,  name:"Picolé de Leite",         cat:"picole",    price:1.50,  emoji:"🍦", bg:"cat-picole",
+  {id:1,  name:"Picolé de Leite",         cat:"picole",    price:1.50,  emoji:"🍦", bg:"cat-picole", img:"img_picole_leite.png",
    badge:"⭐ Favorito", desc:"Picolé cremoso de leite. Gelado e refrescante!",
    multi:false, flavorLabel:"Escolha o sabor:",
    flavors:["Leite Puro","Leite com Coco","Leite com Morango","Leite com Chocolate"]},
 
-  {id:2,  name:"Picolé de Fruta",         cat:"picole",    price:1.50,  emoji:"🍡", bg:"cat-picole",
+  {id:2,  name:"Picolé de Fruta",         cat:"picole",    price:1.50,  emoji:"🍡", bg:"cat-picole", img:"img_picole_fruta.png",
    badge:null, desc:"Picolé natural de fruta. Refrescante e saboroso!",
    multi:false, flavorLabel:"Escolha a fruta:",
    flavors:["Morango","Limão","Maracujá","Manga","Abacaxi","Goiaba"]},
 
-  {id:3,  name:"Picolé Redondo",          cat:"picole",    price:2.50,  emoji:"🍬", bg:"cat-picole",
+  {id:3,  name:"Picolé Redondo",          cat:"picole",    price:2.50,  emoji:"🍬", bg:"cat-picole", img:"img_picole_redondo.png",
    badge:"🔥 Top venda", desc:"Picolé redondo especial. Um clássico da sorveteria!",
    multi:false, flavorLabel:"Escolha o sabor:",
    flavors:["Chocolate","Coco","Morango","Baunilha","Menta com Chocolate"]},
 
   // AÇAÍ
-  {id:4,  name:"Açaí 500ml",              cat:"acai",      price:20.00, emoji:"🫐", bg:"cat-acai",
+  {id:4,  name:"Açaí 500ml",              cat:"acai",      price:20.00, emoji:"🫐", bg:"cat-acai", img:"img_acai.png",
    badge:"⭐ Favorito", desc:"Tigela 500ml de açaí puro com granola e complementos à escolha.",
    multi:true, flavorLabel:"Escolha os complementos (pode marcar mais de um):",
    flavors:["Granola + Banana","Granola + Leite Condensado","Granola + Mel","Granola + Morango","Granola + Paçoca","Sem complemento"]},
 
-  {id:5,  name:"Açaí 300ml",              cat:"acai",      price:16.00, emoji:"🫐", bg:"cat-acai",
+  {id:5,  name:"Açaí 300ml",              cat:"acai",      price:16.00, emoji:"🫐", bg:"cat-acai", img:"img_acai.png",
    badge:null, desc:"Tigela 300ml de açaí puro com granola e complementos à escolha.",
    multi:true, flavorLabel:"Escolha os complementos (pode marcar mais de um):",
    flavors:["Granola + Banana","Granola + Leite Condensado","Granola + Mel","Granola + Morango","Sem complemento"]},
 
   // POTES
-  {id:6,  name:"Pote de Sorvete 2L",      cat:"pote",      price:22.00, emoji:"🍨", bg:"cat-pote",
+  {id:6,  name:"Pote de Sorvete 2L",      cat:"pote",      price:22.00, emoji:"🍨", bg:"cat-pote", img:"img_pote2l.png",
    badge:"💖 Especial", desc:"Pote família 2L. Escolha o sabor desejado.",
    multi:false, flavorLabel:"Escolha o sabor:",
    flavors:["Milho Verde","Ninho Trufado","Prestígio Napolitano","Leite Condensado"]},
 
-  {id:7,  name:"Pote de Sorvete 500ml",   cat:"pote",      price:8.00,  emoji:"🍦", bg:"cat-pote",
+  {id:7,  name:"Pote de Sorvete 500ml",   cat:"pote",      price:8.00,  emoji:"🍦", bg:"cat-pote", img:"img_pote_pequeno.png",
    badge:null, desc:"Pote individual 500ml. Escolha seu sabor favorito.",
    multi:false, flavorLabel:"Escolha o sabor:",
    flavors:["Morango c/ Chocolate e Leite Condensado","Morango","Morango e Leite Condensado","Chocolate"]},
 
-  {id:8,  name:"Pote de Sorvete 1L",      cat:"pote",      price:11.00, emoji:"🍦", bg:"cat-pote",
+  {id:8,  name:"Pote de Sorvete 1L",      cat:"pote",      price:11.00, emoji:"🍦", bg:"cat-pote", img:"img_pote_pequeno.png",
    badge:"🔥 Top venda", desc:"Pote médio 1L. Escolha seu sabor favorito.",
    multi:false, flavorLabel:"Escolha o sabor:",
    flavors:["Morango c/ Chocolate e Leite Condensado","Morango","Morango e Leite Condensado","Chocolate"]},
@@ -493,7 +494,7 @@ const products = [
   // MORENINHA
   {id:9,  name:"Moreninha de Morango",    cat:"moreninha", price:4.00,  emoji:"🍧", bg:"cat-moreninha",
    badge:null, desc:"Deliciosa moreninha sabor morango.",
-   multi:true, flavorLabel:"Escolha os adicionais (opcional, mas obrigatório selecionar ao menos 1):",
+   multi:true, flavorLabel:"Escolha os adicionais (obrigatório selecionar ao menos 1):",
    flavors:["Morango Simples","Morango com Calda","Morango com Granola","Morango com Leite Condensado"]},
 
   {id:10, name:"Moreninha de Chocolate",  cat:"moreninha", price:4.00,  emoji:"🍧", bg:"cat-moreninha",
@@ -512,33 +513,38 @@ const products = [
    flavors:["Milho Verde Simples","Milho Verde com Leite Condensado","Milho Verde com Granola","Milho Verde com Calda"]},
 
   // BOLA DE SORVETE
-  {id:13, name:"Bola Sorvete Chocolate",  cat:"bola",      price:2.00,  emoji:"🍫", bg:"cat-bola",
+  {id:13, name:"Bola Sorvete Chocolate",  cat:"bola",      price:2.00,  emoji:"🍫", bg:"cat-bola", img:"img_bola.png",
    badge:null, desc:"Bola de sorvete cremoso sabor chocolate. Peça quantas quiser!",
    multi:false, flavorLabel:"Escolha o tipo:",
    flavors:["Chocolate ao Leite","Chocolate Amargo","Chocolate Branco","Chocolate com Avelã"]},
 
-  {id:14, name:"Bola Sorvete Morango",    cat:"bola",      price:2.00,  emoji:"🍓", bg:"cat-bola",
+  {id:14, name:"Bola Sorvete Morango",    cat:"bola",      price:2.00,  emoji:"🍓", bg:"cat-bola", img:"img_bola.png",
    badge:"⭐ Favorito", desc:"Bola de sorvete sabor morango feita com fruta de verdade!",
    multi:false, flavorLabel:"Escolha o tipo:",
    flavors:["Morango Natural","Morango com Leite Condensado","Morango com Chocolate"]},
 
-  {id:15, name:"Bola Sorvete Flocos",     cat:"bola",      price:2.00,  emoji:"🍦", bg:"cat-bola",
+  {id:15, name:"Bola Sorvete Flocos",     cat:"bola",      price:2.00,  emoji:"🍦", bg:"cat-bola", img:"img_bola.png",
    badge:null, desc:"Bola de sorvete sabor flocos. Crocante e delicioso!",
    multi:false, flavorLabel:"Escolha o tipo:",
    flavors:["Flocos Simples","Flocos com Chocolate","Flocos com Leite Condensado"]},
 
-  {id:16, name:"Bola Sorvete Leite Cond.",cat:"bola",      price:2.00,  emoji:"🥛", bg:"cat-bola",
+  {id:16, name:"Bola Sorvete Leite Cond.",cat:"bola",      price:2.00,  emoji:"🥛", bg:"cat-bola", img:"img_bola.png",
    badge:null, desc:"Bola de sorvete sabor leite condensado. Cremoso e irresistível!",
    multi:false, flavorLabel:"Escolha o tipo:",
    flavors:["Leite Condensado Simples","Leite Condensado com Morango","Leite Condensado com Chocolate"]},
 
+  {id:19, name:"Casquinha de Sorvete",    cat:"bola",      price:2.00,  emoji:"🍦", bg:"cat-bola", img:"img_casquinha.png",
+   badge:"🆕 Novidade", desc:"Casquinha crocante com bola de sorvete à escolha. Clássico irresistível!",
+   multi:false, flavorLabel:"Escolha o sabor da bola:",
+   flavors:["Chocolate","Morango","Baunilha","Flocos","Leite Condensado","Milho Verde"]},
+
   // SUNDAE
-  {id:17, name:"Sundae de Chocolate",     cat:"sundae",    price:5.00,  emoji:"🍮", bg:"cat-sundae",
+  {id:17, name:"Sundae de Chocolate",     cat:"sundae",    price:5.00,  emoji:"🍮", bg:"cat-sundae", img:"img_sundae.png",
    badge:"🔥 Top venda", desc:"Sorvete com calda quente de chocolate e chantilly.",
    multi:true, flavorLabel:"Escolha os adicionais (obrigatório selecionar ao menos 1):",
    flavors:["Calda Quente de Chocolate","Calda Fria de Chocolate","Com Chantilly","Com Granola","Com Amendoim Triturado"]},
 
-  {id:18, name:"Sundae de Morango",       cat:"sundae",    price:5.00,  emoji:"🍓", bg:"cat-sundae",
+  {id:18, name:"Sundae de Morango",       cat:"sundae",    price:5.00,  emoji:"🍓", bg:"cat-sundae", img:"img_sundae.png",
    badge:null, desc:"Sorvete com calda de morango e chantilly.",
    multi:true, flavorLabel:"Escolha os adicionais (obrigatório selecionar ao menos 1):",
    flavors:["Calda Natural de Morango","Com Frutas Frescas","Com Chantilly","Com Granola","Com Leite Condensado"]},
@@ -554,7 +560,10 @@ function fmt(v){ return 'R$ ' + v.toFixed(2).replace('.',','); }
 // ═══════ RENDER CARD ═══════
 function renderCard(p){
   return `<div class="product-card">
-    <div class="product-img ${p.bg}">${p.emoji}${p.badge?`<span class="product-badge">${p.badge}</span>`:''}</div>
+    <div class="product-img ${p.img?'':p.bg}" style="${p.img?'background:#f0f0f0;':''}">  
+      ${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<span style='font-size:4rem'>${p.emoji}</span>`}
+      ${p.badge?`<span class="product-badge">${p.badge}</span>`:''}
+    </div>
     <div class="product-info">
       <h3>${p.name}</h3>
       <p>${p.desc}</p>
